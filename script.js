@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const shell = document.querySelector(".notice-shell");
   const audio = document.getElementById("noticeAudio");
+  const replayButton = document.getElementById("replayAudioButton");
 
   if (!shell) {
     return;
@@ -52,6 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
   audio.addEventListener("canplay", tryPlay, { once: true });
   audio.addEventListener("loadeddata", tryPlay, { once: true });
   window.addEventListener("pageshow", tryPlay, { once: true });
+
+  if (replayButton) {
+    replayButton.addEventListener("click", function () {
+      audio.currentTime = 0;
+
+      const replayPromise = audio.play();
+      if (replayPromise && typeof replayPromise.then === "function") {
+        replayPromise
+          .then(function () {
+            unlocked = true;
+            removeUnlockListeners();
+          })
+          .catch(function () {});
+      }
+    });
+  }
 
   audio.load();
   tryPlay();
