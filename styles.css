@@ -33,39 +33,6 @@ body {
   overflow-x: hidden;
 }
 
-.replay-audio-button {
-  position: fixed;
-  top: max(0.9rem, calc(env(safe-area-inset-top) + 0.5rem));
-  right: 0.9rem;
-  z-index: 20;
-  border: 0;
-  border-radius: 999px;
-  padding: 0.78rem 1rem;
-  background: linear-gradient(135deg, var(--royal), #2563eb);
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(29, 78, 216, 0.28);
-  font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.replay-audio-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 34px rgba(29, 78, 216, 0.32);
-}
-
-.replay-audio-button:active {
-  transform: translateY(0);
-  box-shadow: 0 10px 18px rgba(29, 78, 216, 0.22);
-}
-
-.replay-audio-button:focus-visible {
-  outline: 3px solid rgba(250, 204, 21, 0.85);
-  outline-offset: 3px;
-}
-
 .notice-app {
   position: relative;
   min-height: 100vh;
@@ -159,10 +126,17 @@ body {
   background: linear-gradient(90deg, var(--royal), var(--sky), var(--amber), var(--red));
 }
 
+.notice-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.95rem;
+}
+
 .notice-pill {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 0.95rem;
   padding: 0.5rem 0.8rem;
   border-radius: 999px;
   background: rgba(29, 78, 216, 0.08);
@@ -171,6 +145,55 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.replay-audio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.58rem 0.86rem;
+  background: linear-gradient(135deg, #0f1f4f, #1d4ed8);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(15, 31, 79, 0.22);
+  font-family: "Poppins", "Noto Sans Devanagari", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.replay-audio-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(15, 31, 79, 0.28);
+}
+
+.replay-audio-button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 18px rgba(15, 31, 79, 0.18);
+}
+
+.replay-audio-button:focus-visible {
+  outline: 3px solid rgba(250, 204, 21, 0.85);
+  outline-offset: 3px;
+}
+
+.replay-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.replay-icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: currentColor;
 }
 
 .notice-body {
@@ -253,11 +276,6 @@ body {
 }
 
 @media (min-width: 700px) {
-  .replay-audio-button {
-    top: 1.2rem;
-    right: 1.2rem;
-  }
-
   .notice-app {
     padding: 1.4rem;
     align-items: center;
@@ -275,6 +293,11 @@ body {
 
   .notice-card {
     padding: 1.35rem;
+  }
+
+  .replay-audio-button {
+    padding: 0.62rem 0.96rem;
+    font-size: 0.79rem;
   }
 }
 

@@ -10,9 +10,6 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <button class="replay-audio-button" id="replayAudioButton" type="button" aria-label="Audio dobara sunein">
-    फिर से सुनें
-  </button>
   <main class="notice-app">
     <div class="liquid liquid-one" aria-hidden="true"></div>
     <div class="liquid liquid-two" aria-hidden="true"></div>
@@ -32,7 +29,17 @@
       </header>
 
       <article class="notice-card">
-        <div class="notice-pill">Result Day Notice</div>
+        <div class="notice-card-top">
+          <div class="notice-pill">Result Day Notice</div>
+          <button class="replay-audio-button" id="replayAudioButton" type="button" aria-label="Play the audio again">
+            <span class="replay-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M12 5a7 7 0 1 1-6.65 9.18 1 1 0 1 1 1.9-.62A5 5 0 1 0 8.1 8.36H11a1 1 0 1 1 0 2H5.75A.75.75 0 0 1 5 9.61V4.5a1 1 0 1 1 2 0v2.12A6.96 6.96 0 0 1 12 5Zm-1.4 3.8a1 1 0 0 1 1.5-.86l3.1 1.9a1.35 1.35 0 0 1 0 2.32l-3.1 1.9a1 1 0 0 1-1.5-.85Z"></path>
+              </svg>
+            </span>
+            <span>Play Again</span>
+          </button>
+        </div>
 
         <div class="notice-body">
           <p><strong>सूचना - रिजल्ट डे (Result Day)</strong></p>
